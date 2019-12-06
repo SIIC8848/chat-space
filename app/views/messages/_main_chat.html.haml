@@ -1,0 +1,41 @@
+.chat-main
+  .group__info
+    .group__info__left
+      .group__info__left__current-group
+        グループ名
+      .group__info__left__member-list
+        Member : takao
+    
+    -# .group__info__edit-btn
+    = link_to "https://www.instagram.com/", class: "group__info__edit-btn" do
+      Edit
+  .messages
+    .message
+      .message__info
+        .message__info__user-name
+          takao
+        .message__info__date
+          2019/12/4(Thu) 16:28:00
+      .message__text
+        (-ω-)zzZ
+
+    .message
+      .message__info
+        .message__info__user-name
+          takao
+        .message__info__date
+          2019/12/4(Thu) 16:30:00
+      .message__text
+        Σ(○ω○)ハッ
+
+  .form
+    .form__form
+      .form__form__input-box
+        .form__form__input-box__text
+        %input{placeholder: "type a message", class: "form__form__input-box__text", type: "text"}
+        
+        %label.form__form__input-box__image
+          %i.far.fa-image
+          %input{type: "file", class: "form__form__input-box__image"}
+      .form__form__submit-btn
+        SEND
