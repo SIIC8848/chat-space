@@ -1,15 +1,15 @@
 .header
   .header__name
     .header__lists
-      .header__lists__user-name
-        takao
+      %h3.header__lists__user-name
+        = current_user.name
       .header__lists__edit
         -# .header__lists__edit__new
         = link_to "https://www.facebook.com/", class: "header__lists__edit__new" do
           %i.fa.fa-edit
           %span<>
         -# .header__lists__edit__account
-        = link_to "https://twitter.com/", class: "header__lists__edit__account" do
+        = link_to edit_user_path(current_user), class: "header__lists__edit__account" do
           %i.fa.fa-cog
           %span<>
         
