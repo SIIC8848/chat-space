@@ -55,6 +55,7 @@ $common-color: #ffffff;
     .group {
       margin-bottom: 40px;
       color: $common-color;
+      text-decoration: none;
 
       &__name {
         font-size: 15px;
@@ -141,47 +142,52 @@ $common-color: #ffffff;
   .form {
     height: 90px;
     background-color: #d2d2d2;
-    padding: 10px 40px;
-    display: flex;
-    align-items: center;
+    padding: 20px 40px;
 
-    &__form {
+    &__form{
       height: 50px;
-      width: 100%;
       display: flex;
-    }
 
-      .form__form__input-box {
-        width: 100%;
+      &__text {
         position: relative;
+        width: 100%;
       }
 
-        .form__form__input-box__text {
-          position: absolute;
+        .form__form__text__input-box {
           height: 50px;
           width: 100%;
-          border-style: none;
           padding: 0 40px 0 10px;
           color: #434a54;
+          border-style: none;
         }
+ 
+      // &__iamge {
+      //   position: absolute;
+      //   top: 17px;
+      //   right: 10px;
+      //   input {
+      //     display: none;
+      //     }
+      // }
       
-        .form__form__input-box__image {
-          position: absolute;
-          top: 16px;
-          right: 10px;
-          input {
-            display: none;
-          }
-        }
-      
-      .form__form__submit-btn {
-        height: 50px;
-        width: 100px;
-        margin-left: 15px;
-        color: $common-color;
-        background-color: #38aef0;
-        text-align: center;
-        line-height: 50px;
-      }
+      // &__submit-btn {
+      //   height: 50px;
+      //   width: 100px;
+      //   margin-left: 15px;
+      //   color: $common-color;
+      //   background-color: #38aef0;
+      //   text-align: center;
+      //   line-height: 50px;
+      // }
+    }
   }
 }
+
+
+// height: 50px;
+//       width: 100%;
+//       position: relative;
+//       border-style: none;
+//       padding-left: 10px;
+//       color: #434a54;
+//       display: flex;
