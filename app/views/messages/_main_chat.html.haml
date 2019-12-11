@@ -2,40 +2,24 @@
   .group__info
     .group__info__left
       .group__info__left__current-group
-        グループ名
+        = @group.name
       .group__info__left__member-list
-        Member : takao
+        Member :
+        - @group.users.each do |user|
+          = user.name
     
     -# .group__info__edit-btn
-    = link_to "https://www.instagram.com/", class: "group__info__edit-btn" do
+    = link_to edit_group_path(@group), class: "group__info__edit-btn" do
       Edit
   .messages
-    .message
-      .message__info
-        .message__info__user-name
-          takao
-        .message__info__date
-          2019/12/4(Thu) 16:28:00
-      .message__text
-        (-ω-)zzZ
-
-    .message
-      .message__info
-        .message__info__user-name
-          takao
-        .message__info__date
-          2019/12/4(Thu) 16:30:00
-      .message__text
-        Σ(○ω○)ハッ
+    = render @messages
 
   .form
-    .form__form
-      .form__form__input-box
-        .form__form__input-box__text
-        %input{placeholder: "type a message", class: "form__form__input-box__text", type: "text"}
-        
-        %label.form__form__input-box__image
-          %i.far.fa-image
-          %input{type: "file", class: "form__form__input-box__image"}
-      .form__form__submit-btn
-        SEND
+    = form_for [@group, @message], class: "form__form" do |f|
+      %div.form__form__text
+        = f.text_field :content, class: 'form__form__text__input-box', placeholder: 'type a message'
+        %div.form__form__image
+          = f.label :image, class: 'form__form__image' do
+            = icon('fas', 'image', class: 'icon')
+            = f.file_field :image, class: 'hidden'
+      = f.submit 'Send', class: 'form__form__submit-btn'
