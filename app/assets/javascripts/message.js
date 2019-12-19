@@ -85,5 +85,5 @@ $(function(){
         $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
      })
   }
-  setInterval(reloadMessages, 2000);
+  setInterval(reloadMessages, 4000);
 });
