@@ -4,7 +4,7 @@ $(function(){
     if ( message.image ) {
       var html =
         `<div class="message" data-message-id=${message.id}>
-          <div class="message_info">
+          <div class="message__info">
             <div class="message__info__user-name">
               ${message.user_name}
             </div>
