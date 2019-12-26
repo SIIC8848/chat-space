@@ -82,7 +82,9 @@ $(function(){
         insertHTML += buildHTML(message)
       });
         $('.messages').append(insertHTML);
-        $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
+        if(insertHTML.length > 0){
+          $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast')
+        }
      })
   }
   setInterval(reloadMessages, 4000);
